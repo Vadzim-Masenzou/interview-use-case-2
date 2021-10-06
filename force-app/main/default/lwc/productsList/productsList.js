@@ -48,6 +48,7 @@ export default class ProductsList extends LightningElement {
         } else if(error){
             this.productsExist = false;
             this.infoMessage = error.body.message;
+            this.isLoaded = true;
         }
     }
 
