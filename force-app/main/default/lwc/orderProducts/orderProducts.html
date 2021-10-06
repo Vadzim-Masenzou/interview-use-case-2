@@ -1,0 +1,27 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Order Products">
+        <div class="custom-table slds-scrollable slds-table_striped slds-table_bordered slds-table_col-bordered slds-table slds-columns" style="max-height: 420px;" onscroll={onscrollHandle}>
+            <lightning-datatable
+                    key-field="id"
+                    data={orderItemsData}
+                    columns={columns}
+                    onrowselection={handleSelectedRows}>
+            </lightning-datatable>
+        </div>    
+        <div if:true={isProductsLoaded} class="slds-grid slds-wrap product-item-container product-list-header">
+            <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 slds-text-align_right">
+                <h1 class="total-price-container">TOTAL ORDER PRICE: <b>${totalPrice}</b></h1>
+            </div>
+            <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 slds-text-align_left">
+                <lightning-button if:true={hasItemsToDelete} variant="destructive" label="Delete Items" title="Delete Items" onclick={onHandleDelete} class="slds-m-left_x-large"></lightning-button>
+              </div>
+            <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 slds-text-align_right">
+              <lightning-button variant="brand" label="Confirm The Order" title="Confirm The Order" onclick={onHandleSubmit} class="slds-m-right_x-large" disabled={isOrderActivated}></lightning-button>
+            </div>
+        </div>
+        <div if:false={isLoaded} class="slds-p-around_x-large">
+            <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+        </div>
+    </lightning-card>
+</template>

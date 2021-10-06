@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Available Products">
+            <div class="slds-grid slds-wrap product-list-header">
+                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 slds-text-align_left product-element">
+                <span><b>Name</b></span>
+              </div>
+              <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 slds-text-align_center product-element">
+                <span><b>List Price</b></span>
+              </div>
+              <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 slds-text-align_center product-element">
+                <span><b>Add To Order</b></span>
+              </div>
+            </div>
+            <div class="custom-table slds-scrollable" style="max-height: 500px;" onscroll={onscrollHandle}>
+                <template if:true={productsExist} for:each={products} for:item="product">
+                    <div class="slds-grid slds-wrap product-item-container" key={product.Id}>
+                        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 slds-text-align_left product-element">
+                            <span>{product.Product2.Name}</span>
+                        </div>
+                        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 slds-text-align_center product-element">
+                          <span>${product.UnitPrice}</span>
+                        </div>
+                        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 slds-text-align_center product-element">
+                            <button data-target-id={product.Id} class="slds-button slds-button_icon" title="Add" onclick={handleAddProduct} disabled={isOrderActivated} style={addBtnOpacity}>
+                                <lightning-icon icon-name="utility:add" alternative-text="add" size="small" ></lightning-icon>
+                             </button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="info-container" if:false={productsExist}>
+                <lightning-layout vertical-align="center" class="x-large">
+                    <lightning-layout-item flexibility="auto" padding="around-small">
+                        <div class="custom-box">
+                            {infoMessage}
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <div if:false={isLoaded} class="slds-p-around_x-large">
+                <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+            </div>
+    </lightning-card>
+</template>
