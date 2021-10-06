@@ -13,7 +13,7 @@
 5. Go to Order detail page and find components there :)
 
 # Following link on Google Drive contains 2 video files:
-
+https://drive.google.com/drive/folders/1YwKCs9oNTDGz88mYsfO3Iuqy4mcM8Jdx?usp=sharing
 1. 'configuration_guide' video file which demonstrates how to configure the project
 2. 'acceptance_criteria_guide' video file which demonstrates ACs
     
