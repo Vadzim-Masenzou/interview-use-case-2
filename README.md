@@ -12,9 +12,9 @@
 4. After successfull deploy go to Setup -> Lightning App Builder and set 'Order Record Page' Lightning Page as Org Default
 5. Go to Order detail page and find components there :)
 
+# Following link on Google Drive contains 2 video files:
 
-# Project has data folder which contains following files
-1. 'products_list_test.csv' file with dummy products data (if needed)
-2. 'configuration_guide' video file which demonstrates how to configure the project
-3. 'acceptance_criteria_guide' video file which demonstrates ACs
+1. 'configuration_guide' video file which demonstrates how to configure the project
+2. 'acceptance_criteria_guide' video file which demonstrates ACs
     
+PS: Project has data folder which contains 'products_list_test.csv' file with dummy products data (if needed)
