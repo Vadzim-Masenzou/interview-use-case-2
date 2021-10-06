@@ -1,11 +1,11 @@
 # Steps to configure the project
 
 1. Clone git repository to your local machine
-2. Create scratch org using command below:
+2. Go to cloned repo directory and create scratch org using command below:
     ```
     sfdx force:org:create -f project-scratch-def.json -a <your scratch org name> --setdefaultusername
     ```
-3. Go to cloned repo directory and push the code to your scratch org using command below:
+3. Push the code to your scratch org using command below:
     ```
     sfdx force:source:push
     ```
